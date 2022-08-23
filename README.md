@@ -10,6 +10,8 @@ https://rdpackages.github.io/replication
 
 - Source: Ludwig and Miller (2007): [Does Head Start Improve Children’s Life Chances? Evidence from a Regression Discontinuity Design](https://doi.org/10.1162/qjec.122.1.159), _Quarterly Journal of Economics_ 122(1): 159-208.
 
+- Python implementation: [csv](headstart.csv) | [main](CT_2021_NBER.py)
+
 - R implementation: [csv](headstart.csv) | [main](CT_2021_NBER.R)
 
 - Stata implementation: [dta](headstart.dta) | [main](CT_2021_NBER.do)
