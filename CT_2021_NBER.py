@@ -3,7 +3,7 @@
 ## NBER Summer Institute Methods Lectures, July 2021
 ## Author: Matias D. Cattaneo and Rocio Titiunik 
 ## Python version by Ricardo Masini
-## Last update: 12-FEB-2022
+## Last update: 29-JUN-2023
 ################################################################################
 ## Website: https://rdpackages.github.io/
 ################################################################################
@@ -106,9 +106,26 @@ out = rdrobust(Y, X, C, covs=Z)
 len2 = (out.ci['CI Upper'] - out.ci['CI Lower'])[2]
 print("CI length change: ", round((len2/len1-1)*100,2), "%")
 
+
+###############################################################################
+# Local Randomization Methods
+###############################################################################
+rdrandinf(Y, X, C, wl=57, wr=61, reps=1000)
+
+rdrandinf(Y, X, C, wl=57, wr=61, reps=1000, statistic='all')
+
+D =  data[['census1960_pop', 
+       'census1960_pcturban', 
+       'census1960_pctblack']]
+
+rdwinselect(X, D, cutoff=59.1984, obsmin=10, wobs=5, nwindows=20, seed=43)
+
+
 ################################################################################
 ## Falsification/Validation Methods
 ################################################################################
+
+rdwinselect(X, cutoff=C)
 
 ## Pre-intervention covariates and placebo outcomes
 rdplot(Y, X, C)
